@@ -1,9 +1,0 @@
-#!/bin/bash
-echo "SOURCE_BRANCH=$SOURCE_BRANCH";
-if [[ -n "$SOURCE_BRANCH" ]]; then
-  VERSION="${SOURCE_BRANCH/v/}";
-  echo "VERSION=$VERSION";
-  CONTENTS=$(cat package.json);
-  NEWCONTENTS="${CONTENTS/0\.0\.0/$VERSION}";
-  echo "$NEWCONTENTS" > package.json;
-fi
